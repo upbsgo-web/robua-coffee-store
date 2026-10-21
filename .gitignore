@@ -1,0 +1,8 @@
+node_modules
+dist
+build
+.next
+__pycache__
+.venv
+.env
+.agent/log.jsonl
