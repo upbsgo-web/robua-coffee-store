@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رُبوة | متجر القهوة المختصة</title>
+<meta name="description" content="رُبوة — متجر القهوة المختصة: بن طازج التحميص، توصيل سريع لجميع المدن">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- الشريط العلوي -->
+<div class="topbar">🚚 شحن مجاني للطلبات فوق 150 ر.س &nbsp; • &nbsp; تحميص طازج كل يوم أحد وخميس</div>
+
+<!-- الهيدر -->
+<header class="header" id="header">
+  <div class="container header-in">
+    <a class="logo" href="#home">☕ رُبْـوة<span>ROBUA</span></a>
+    <nav class="nav">
+      <a href="#home">الرئيسية</a>
+      <a href="#shop">المتجر</a>
+      <a href="#story">قصتنا</a>
+      <a href="#reviews">آراء عملائنا</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-mini">
+        <input id="searchMini" type="search" placeholder="ابحث عن قهوتك…">
+      </div>
+      <button class="cart-btn" id="openCart" aria-label="السلة">🛒 <b id="cartCount">0</b></button>
+      <button class="menu-btn" id="menuBtn" aria-label="القائمة">☰</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home">الرئيسية</a><a href="#shop">المتجر</a><a href="#story">قصتنا</a><a href="#reviews">آراء عملائنا</a><a href="#contact">تواصل</a>
+  </div>
+</header>
+
+<!-- البطل -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-txt">
+      <div class="badge">✨ تحميص مختص • بن فاخر 100% أرابيكا</div>
+      <h1>قهوتك الصباحية<br><em>تبدأ من هنا</em></h1>
+      <p>نختار أجود محاصيل إثيوبيا وكولومبيا والبرازيل، نحمّصها بعناية في محمصتنا بالرياض، ونوصّلها لباب بيتك طازجة.</p>
+      <div class="hero-cta">
+        <a href="#shop" class="btn btn-gold">تسوّق الآن ←</a>
+        <a href="#story" class="btn btn-ghost">تعرّف علينا</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>+12k</b><span>عميل سعيد</span></div>
+        <div><b>4.9★</b><span>تقييم المتجر</span></div>
+        <div><b>48h</b><span>من التحميص للباب</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="فنجان قهوة مختصة">
+      <div class="float-card f1"><b>محمصة اليوم 🔥</b><span>إثيوبيا يرقاتشيف — 68 ر.س</span></div>
+      <div class="float-card f2"><b>⭐ الأعلى تقييماً</b><span>كولومبيا سوبريمو — 75 ر.س</span></div>
+    </div>
+  </div>
+  <div class="hero-wave"></div>
+</section>
+
+<!-- المزايا -->
+<section class="features">
+  <div class="container feat-grid">
+    <div class="feat">🔥<div><b>تحميص طازج</b><span>نحمّص بعد طلبك مباشرة</span></div></div>
+    <div class="feat">🚚<div><b>توصيل سريع</b><span>2-4 أيام لجميع المدن</span></div></div>
+    <div class="feat">💳<div><b>دفع آمن</b><span>مدى • فيزا • آبل باي • عند الاستلام</span></div></div>
+    <div class="feat">↩️<div><b>ضمان الاسترداد</b><span>استرجاع خلال 7 أيام</span></div></div>
+  </div>
+</section>
+
+<!-- المتجر -->
+<section class="shop" id="shop">
+  <div class="container">
+    <div class="sec-head">
+      <div><span class="kicker">— متجرنا —</span><h2>اختر قهوتك المفضلة</h2></div>
+      <div class="sort-wrap">ترتيب: <select id="sortSel">
+        <option value="pop">الأكثر شعبية</option>
+        <option value="cheap">السعر: من الأقل</option>
+        <option value="exp">السعر: من الأعلى</option>
+        <option value="rate">الأعلى تقييماً</option>
+      </select></div>
+    </div>
+    <div class="filters" id="filters">
+      <button class="chip active" data-cat="all">الكل</button>
+      <button class="chip" data-cat="single">مختصة (سنجل أوريجن)</button>
+      <button class="chip" data-cat="espresso">اسبريسو</button>
+      <button class="chip" data-cat="arabic">قهوة عربية</button>
+      <button class="chip" data-cat="cold">باردة ومقطرة</button>
+      <button class="chip" data-cat="tools">أدوات</button>
+    </div>
+    <p class="result-count" id="resultCount"></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- عرض خاص -->
+<section class="offer">
+  <div class="container offer-in">
+    <div class="offer-txt">
+      <span class="kicker">عرض الأسبوع 🔥</span>
+      <h2>بوكس الاكتشاف — 4 محاصيل × 250غ</h2>
+      <p>جرّب إثيوبيا + كولومبيا + البرازيل + كينيا بسعر خاص، مع مطحنة هدية لأول 50 طلب.</p>
+      <div class="offer-price"><s>260 ر.س</s><b>189 ر.س</b><span class="off">وفّر 27%</span></div>
+      <button class="btn btn-gold" data-add="box">أضف البوكس للسلة 🛒</button>
+      <div class="timer">ينتهي خلال: <b id="timer">02:14:55</b></div>
+    </div>
+    <div class="offer-art"><img src="https://images.unsplash.com/photo-1495774856032-8b90bbb32b32?q=80&w=800&auto=format&fit=crop" alt="بوكس الاكتشاف"></div>
+  </div>
+</section>
+
+<!-- قصتنا -->
+<section class="story" id="story">
+  <div class="container story-grid">
+    <div class="story-art"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=800&auto=format&fit=crop" alt="محمصة رُبوة"><div class="story-badge">منذ 2018<br>نحمّص بحب</div></div>
+    <div>
+      <span class="kicker">— قصتنا —</span>
+      <h2>من المزرعة إلى فنجانك</h2>
+      <p>بدأت «رُبوة» من محمصة صغيرة في الرياض، واليوم نتعامل مباشرة مع 14 مزرعة في 6 دول. نفحص كل دفعة، نحمّصها على دفعات صغيرة، ونطحن حسب طلبك: اسبريسو، فلتر، فرنش برس أو تركي.</p>
+      <ul class="ticks"><li>✅ بن أرابيكا فاخر بدرجة 84+ (مختصة حقيقية)</li><li>✅ تحميص وسط وفاتح وغامق حسب ذوقك</li><li>✅ تغليف بصمام يحفظ النكهة 30 يوم</li></ul>
+      <div class="story-nums"><div><b>14</b><span>مزرعة شريكة</span></div><div><b>6</b><span>دول منشأ</span></div><div><b>32</b><span>صنف متوفر</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- الآراء -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="sec-head center"><div><span class="kicker">— قالوا عنا —</span><h2>آراء عملائنا ☕</h2></div></div>
+    <div class="rev-grid">
+      <div class="rev"><div class="stars">★★★★★</div><p>«أفضل قهوة مختصة جربتها بالسعودية، الإثيوبية منعشة والتحميص فرش، وصلتني خلال يومين.»</p><b>— نورة العتيبي <span>الرياض</span></b></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«بوكس الاكتشاف فكرة عبقرية، عرفت ذوقي الحقيقي. التغليف فخم والهدية كانت لطيفة.»</p><b>— محمد الشمري <span>جدة</span></b></div>
+      <div class="rev"><div class="stars">★★★★☆</div><p>«اسبريسو البرازيلي كريمي وثابت مع الحليب. أتمنى تتوفر أكياس 1 كيلو بسعر أوفر.»</p><b>— عبدالله القحطاني <span>الدمام</span></b></div>
+    </div>
+  </div>
+</section>
+
+<!-- النشرة -->
+<section class="news" id="contact">
+  <div class="container news-in">
+    <h2>اشترك وخذ خصم 15% على أول طلب 🎁</h2>
+    <p>وصفات، محاصيل جديدة، وعروض حصرية — مرة بالأسبوع، بدون إزعاج.</p>
+    <form id="newsForm"><input type="email" id="newsMail" placeholder="بريدك الإلكتروني" required><button class="btn btn-dark">اشترك</button></form>
+  </div>
+</section>
+
+<!-- الفوتر -->
+<footer class="footer">
+  <div class="container foot-grid">
+    <div><a class="logo" href="#home">☕ رُبْـوة<span>ROBUA</span></a><p>محمصة سعودية مختصة — الرياض، حي الياسمين، طريق الملك فهد.<br>يومياً 8ص - 11م • <bdi dir="ltr">+966 55 123 4567</bdi></p></div>
+    <div><b>روابط</b><a href="#shop">المتجر</a><a href="#story">قصتنا</a><a href="#reviews">الآراء</a></div>
+    <div><b>مساعدة</b><a href="#" onclick="return false">الشحن والإرجاع</a><a href="#" onclick="return false">الأسئلة الشائعة</a><a href="#" onclick="return false">تتبع طلبك</a></div>
+    <div><b>الدفع</b><p class="pay">مدى • VISA • MasterCard • Apple Pay • عند الاستلام</p></div>
+  </div>
+  <div class="copy">© 2026 رُبوة للقهوة المختصة — جميع الحقوق محفوظة</div>
+</footer>
+
+<!-- السلة -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart" id="cart" aria-label="سلة التسوق">
+  <div class="cart-head"><h3>🛒 سلة التسوق <span id="cartN"></span></h3><button id="closeCart">✕</button></div>
+  <div class="ship-bar"><div class="ship-fill" id="shipFill"></div></div>
+  <p class="ship-msg" id="shipMsg"></p>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="row"><span>المجموع الفرعي</span><b id="subTotal">0 ر.س</b></div>
+    <div class="row"><span>التوصيل</span><b id="shipCost">—</b></div>
+    <div class="row total"><span>الإجمالي</span><b id="grandTotal">0 ر.س</b></div>
+    <button class="btn btn-gold big" id="checkoutBtn">إتمام الطلب ←</button>
+    <button class="link" id="clearCart">إفراغ السلة</button>
+  </div>
+</aside>
+
+<!-- الدفع -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-card">
+    <div class="modal-head"><h3>إتمام الطلب</h3><button id="closeCheckout">✕</button></div>
+    <div class="steps"><span class="step on" data-s="1">1 الشحن</span><span class="step" data-s="2">2 الدفع</span><span class="step" data-s="3">3 التأكيد</span></div>
+    <div class="mbody">
+      <div class="mstep" data-p="1">
+        <div class="fld"><label>الاسم الكامل *</label><input id="fName" placeholder="مثال: سارة محمد"></div>
+        <div class="fld2">
+          <div class="fld"><label>الجوال *</label><input id="fPhone" inputmode="tel" placeholder="05xxxxxxxx"></div>
+          <div class="fld"><label>المدينة *</label><select id="fCity"><option>الرياض</option><option>جدة</option><option>الدمام</option><option>مكة المكرمة</option><option>المدينة المنورة</option><option>أبها</option><option>تبوك</option><option>بريدة</option><option>أخرى</option></select></div>
+        </div>
+        <div class="fld"><label>العنوان (الحي + الشارع) *</label><input id="fAddr" placeholder="حي الياسمين، شارع…"></div>
+        <div class="fld"><label>ملاحظات (اختياري)</label><input id="fNote" placeholder="درجة الطحن، وقت التوصيل…"></div>
+        <button class="btn btn-gold big" id="toPay">متابعة للدفع ←</button>
+      </div>
+      <div class="mstep hide" data-p="2">
+        <div class="pay-opts">
+          <label class="pay-opt"><input type="radio" name="pay" value="cod" checked>💵 الدفع عند الاستلام</label>
+          <label class="pay-opt"><input type="radio" name="pay" value="card">💳 بطاقة (مدى / فيزا)</label>
+          <label class="pay-opt"><input type="radio" name="pay" value="apple">🍏 Apple Pay</label>
+        </div>
+        <div id="cardBox" class="hide">
+          <div class="fld"><label>رقم البطاقة</label><input id="cNum" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19"></div>
+          <div class="fld2"><div class="fld"><label>الانتهاء</label><input id="cExp" placeholder="MM/YY"></div><div class="fld"><label>CVV</label><input id="cCvv" inputmode="numeric" maxlength="4" placeholder="123"></div></div>
+        </div>
+        <div class="order-sum" id="orderSum"></div>
+        <button class="btn btn-gold big" id="confirmOrder">تأكيد الطلب ✅</button>
+        <button class="link" id="backShip">→ رجوع للشحن</button>
+      </div>
+      <div class="mstep hide center" data-p="3">
+        <div class="done">✅</div>
+        <h3>شكراً لك! تم استلام طلبك</h3>
+        <p>رقم الطلب: <b id="orderNo" dir="ltr">#RB-0000</b></p>
+        <p class="muted" id="doneMsg"></p>
+        <button class="btn btn-dark" id="doneClose">متابعة التسوق</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- تفاصيل المنتج -->
+<div class="modal" id="quickModal">
+  <div class="modal-card">
+    <div class="modal-head"><h3 id="qName"></h3><button id="closeQuick">✕</button></div>
+    <div class="mbody"><div class="q-grid"><div class="q-art" id="qArt"></div>
+      <div><p class="muted" id="qDesc"></p><p id="qMeta"></p>
+      <div class="fld"><label>الحجم</label><select id="qSize"><option value="250">250غ</option><option value="500">500غ (+40%)</option><option value="1000">1 كغ (+90%)</option></select></div>
+      <div class="fld"><label>الطحن</label><select id="qGrind"><option>حبوب كاملة</option><option>اسبريسو</option><option>فلتر / مقطرة</option><option>فرنش برس</option><option>تركي ناعم</option></select></div>
+      <div class="q-buy"><b id="qPrice"></b><button class="btn btn-gold" id="qAdd">أضف للسلة 🛒</button></div>
+      <p class="hint">🚚 شحن مجاني فوق 150 ر.س • ↩️ إرجاع خلال 7 أيام</p>
+    </div></div></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<a class="wa" href="https://wa.me/966551234567" target="_blank" aria-label="واتساب">💬</a>
+
+<script src="app.js"></script>
+</body>
+</html>
